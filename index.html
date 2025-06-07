@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoAware</title>
+
+  <!-- Leaflet CSS для карты -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- Пользовательские стили -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Шапка сайта -->
+  <header class="site-header">
+    <div class="container header-container">
+      <h1 class="logo">🌱 EcoAware</h1>
+      <nav class="nav">
+        <a href="#education" class="nav-link">Обучение</a>
+        <a href="#map-section" class="nav-link">Карта</a>
+        <a href="#scanner" class="nav-link">Сканер</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Секция обучения -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2>♻️ Как сортировать отходы</h2>
+      <p>Ниже — простые советы по сортировке основных видов отходов:</p>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <img src="https://img.icons8.com/color/96/plastic.png" alt="Пластик" />
+          <h3>Пластик</h3>
+          <p>Промой и сними крышку. Сдавай в контейнер с маркировкой ♳–♷.</p>
+        </div>
+        <div class="guide-card">
+          <img src="https://img.icons8.com/color/96/paper.png" alt="Бумага" />
+          <h3>Бумага</h3>
+          <p>Без загрязнений и жира. Газеты, коробки, тетради.</p>
+        </div>
+        <div class="guide-card">
+          <img src="https://img.icons8.com/?size=100&id=13883&format=png&color=000000" alt="Металл" />
+          <h3>Металл</h3>
+          <p>Банки и фольга. Очисти от остатков еды.</p>
+        </div>
+        <div class="guide-card">
+          <img src="https://img.icons8.com/?size=100&id=1ftVn8GOXtit&format=png&color=000000" alt="Стекло" />
+          <h3>Стекло</h3>
+          <p>Сортируй по цвету. Целые бутылки и банки.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секция карты с фильтрами -->
+  <section id="map-section" class="section map-section">
+    <div class="container">
+      <h2>♻ Пункты переработки по Казахстану</h2>
+      <div id="controls">
+        <button id="locate-btn" aria-label="Определить мое местоположение">📍 Мое местоположение</button>
+
+        <label>
+          <input type="checkbox" class="filter" value="пластик" checked />
+          Пластик
+        </label>
+        <label>
+          <input type="checkbox" class="filter" value="бумага" checked />
+          Бумага
+        </label>
+        <label>
+          <input type="checkbox" class="filter" value="металл" checked />
+          Металл
+        </label>
+      </div>
+    </div>
+    <div id="map"></div>
+  </section>
+
+  <!-- Секция сканера штрихкодов -->
+  <section id="scanner" class="section">
+    <h1>Сканер штрихкодов EcoAware</h1>
+    <div id="qr-reader"></div>
+    <div id="qr-result" class="hidden">
+      <b>Результат сканирования:</b>
+      <div id="product-info">Отсканируйте код, чтобы узнать информацию о продукте.</div>
+      <button id="rescan-btn">Сканировать снова</button>
+    </div>
+    <!-- Скрипт html5-qrcode -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  </section>
+
+  <!-- Leaflet JS для карты -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Пользовательские скрипты -->
+  <script src="script.js"></script>
+</body>
+</html>

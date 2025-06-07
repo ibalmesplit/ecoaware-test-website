@@ -1,0 +1,344 @@
+/* Reset и базовые стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0faf0;
+  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 30px 15px;
+  overflow-x: hidden;
+}
+
+/* Контейнер для ограниченной ширины сайта */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Навбар / шапка */
+.site-header {
+  width: 100%;
+  background-color: #dff0e0;
+  padding: 15px 20px;
+  border-bottom: 2px solid #b6e2c3;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+  margin-bottom: 30px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2f7a33;
+  user-select: none;
+  letter-spacing: 1.2px;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  color: #1e4620;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  user-select: none;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #3a9a43;
+  color: white;
+  outline: none;
+  box-shadow: 0 0 8px #3a9a43aa;
+  cursor: pointer;
+}
+
+/* Основные секции */
+.section {
+  background-color: #f8fff8;
+  border-radius: 16px;
+  padding: 60px 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.05);
+  max-width: 1200px;
+  width: 100%;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #2f7a33;
+  text-align: center;
+}
+
+.section p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  max-width: 720px;
+  color: #3a5a27;
+  line-height: 1.5;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Сетка карточек */
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.guide-card {
+  background-color: #ffffff;
+  border: 1px solid #cce5d4;
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.guide-card:hover,
+.guide-card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.guide-card img {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 14px;
+  user-select: none;
+}
+
+.guide-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #3a9a43;
+}
+
+.guide-card p {
+  font-size: 16px;
+  color: #4a6a3a;
+  line-height: 1.4;
+}
+
+/* Карта */
+#map {
+  height: 620px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto 60px auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s ease;
+}
+
+#map:hover {
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.18);
+}
+
+/* Контролы фильтра */
+#controls {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#locate-btn {
+  background-color: #3a9a43;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px #3a9a4388;
+  user-select: none;
+}
+
+#locate-btn:hover,
+#locate-btn:focus {
+  background-color: #2f7a33;
+  box-shadow: 0 6px 18px #2f7a3388;
+  outline: none;
+}
+
+label {
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2f7a33;
+  transition: color 0.3s ease;
+}
+
+label:hover,
+label:focus-within {
+  color: #3a9a43;
+}
+
+input.filter {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #3a9a43;
+}
+
+/* Заголовок сканера */
+h1 {
+  margin-bottom: 20px;
+  color: #0f8340;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  user-select: none;
+}
+
+/* Сканер QR */
+#qr-reader {
+  width: 650px;
+  max-width: 650px;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(39, 174, 96, 0.3);
+  background: white;
+  margin: 20px auto;
+}
+
+#qr-result {
+  margin-top: 25px;
+  padding: 20px;
+  width: 350px;
+  max-width: 90vw;
+  background: #e6f2e6;
+  border: 2px solid #27ae60;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
+  font-size: 18px;
+  font-weight: 600;
+  color: #145214;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  user-select: none;
+}
+
+#qr-result.hidden {
+  display: none;
+}
+
+#qr-result b {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+#product-info p {
+  font-weight: 400;
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+button#rescan-btn {
+  margin-top: 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+button#rescan-btn:hover {
+  background-color: #1e8449;
+}
+
+/* Анимация при появлении текста результата */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#qr-result.show {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .nav {
+    gap: 12px;
+  }
+
+  .section {
+    padding: 40px 15px;
+  }
+
+  #map {
+    height: 500px;
+  }
+
+  #qr-reader,
+  #qr-result {
+    max-width: 90vw;
+  }
+
+  button#rescan-btn {
+    width: 90vw;
+    max-width: none;
+  }
+}
